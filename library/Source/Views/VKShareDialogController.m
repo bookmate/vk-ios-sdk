@@ -1011,6 +1011,10 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
         if (parent.completionHandler != NULL) {
             parent.completionHandler(parent, VKShareDialogControllerResultFailed);
         }
+        
+        if (parent.dismissAutomatically) {
+            [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+        }
     }];
 }
 

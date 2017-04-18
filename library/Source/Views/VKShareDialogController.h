@@ -27,7 +27,8 @@
 
 typedef NS_ENUM(NSInteger, VKShareDialogControllerResult) {
     VKShareDialogControllerResultCancelled,
-    VKShareDialogControllerResultDone
+    VKShareDialogControllerResultDone,
+    VKShareDialogControllerResultFailed
 };
 
 /*

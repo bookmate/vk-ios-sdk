@@ -953,7 +953,7 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
 - (void)close:(id)sender {
     __strong typeof(self.parent) parent = self.parent;
     if (parent.completionHandler != NULL) {
-        parent.completionHandler(parent, VKShareDialogControllerResultCancelled);
+        parent.completionHandler(parent, VKShareDialogControllerResultCancelled, nil);
     }
     if (parent.dismissAutomatically) {
         [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -997,7 +997,7 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
             parent.postId = [NSString stringWithFormat:@"%@_%@", [VKSdk accessToken].userId, post_id];
         }
         if (parent.completionHandler != NULL) {
-            parent.completionHandler(parent, VKShareDialogControllerResultDone);
+            parent.completionHandler(parent, VKShareDialogControllerResultDone, nil);
         }
         if (parent.dismissAutomatically) {
             [self.navigationController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -1009,7 +1009,7 @@ static const CGFloat kAttachmentsViewSize = 100.0f;
         [textView becomeFirstResponder];
 
         if (parent.completionHandler != NULL) {
-            parent.completionHandler(parent, VKShareDialogControllerResultFailed);
+            parent.completionHandler(parent, VKShareDialogControllerResultFailed, error);
         }
         
         if (parent.dismissAutomatically) {
